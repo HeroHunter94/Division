@@ -1,0 +1,42 @@
+body {
+    background-color: gray;
+}
+
+h1 {
+    color: #FFFFFF;
+    text-align: center;
+background: #333333;
+text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+}
+
+
+img {
+    
+    -webkit-box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 15px 15px 15px 24px rgba(0,0,0,0); 
+    box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 15px 15px 15px 24px rgba(0,0,0,0);
+    margin: 0 auto;
+    
+    width: 700px;
+    height: 400px;
+    display: block;
+   
+
+}
+
+
+
+p {
+    color: rgb(61, 54, 24);
+    border-style: double;
+    border-bottom: 3px solid rgb(106, 47, 216);
+    border-left: 3px dotted orange;
+    border-right: 3px dashed green;
+    border-top: 3px groove purple;
+    border-radius: 10px;
+    font-family: "lucida consoel", "courier new";
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    margin: 2 auto;
+    text-align: center;
+}
