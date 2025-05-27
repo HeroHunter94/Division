@@ -1,0 +1,62 @@
+<!--Haz un programa en JavaScript que reciba dos números enteros: 
+un dividendo y un divisor. El divisor ha de ser un número entre 2 y 7.
+ Si no lo es, el programa deberá dar un mensaje de advertencia. 
+ Si el divisor está correcto, el programa deberá indicar si los números
+  son múltiplos o no.-->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple checker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/webp" href="./R.jpg">
+  </head>
+  <body>
+    <h1>Multiple Calculator</h1><br><hr>
+    <label for ="dividend">Please insert an integer number as dividend: </label>
+    <input type ="number" id = "dividend" value ="0" required>
+    <br>
+    <label for ="divisor">Please insert an integer number as a divisor: </label>
+    <input type ="number" id = "divisor" value ="0" required>
+
+    <p><button type ="button" onclick ="isMultiple()">Check</button></p>
+    <p>
+        <a href ="https://en.wikipedia.org/wiki/Multiple_(mathematics)">Learn about Multiple
+            <img id = "img" src ="mat.jpg" alt ="Math Meme">
+        </a>
+    </p>
+    <p id ="output"></p>
+
+    <footer>
+        <hr>
+        <p>Author Name: Danilo Russo</p>
+        <a href = "mailto:danilorusso.info94@gmail.com">Contact me</a>
+    </footer>
+
+    <script>
+        const DIVIDEND = document.getElementById("dividend");
+        const DIVISOR = document.getElementById("divisor");
+        
+        function isMultiple(){
+            let dividend = Number(DIVIDEND.value);
+            let divisor = Number(DIVISOR.value);
+            let rest = dividend % divisor;
+            if(!Number.isInteger(dividend) || !Number.isInteger(divisor)){
+                output.innerHTML ="Please enter a valid Integer for both the values.";
+            } else if(divisor < 2 || divisor > 7) {
+                output.innerHTML = "Please enter a value between 2 and 7";
+            } else if(rest == 0){
+                output.innerHTML = `${divisor} is a multiple of ${dividend}`;
+            } else {
+                output.innerHTML = `${divisor} is not a multiple of ${dividend}`;
+            }
+
+        }
+    </script>
+
+
+    
+    
+  </body>
+  </html>
