@@ -1,29 +1,54 @@
+<!--Haz un programa en JavaScript que reciba un número 
+(lo convierta a entero) e indique si el número es par o impar.-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Division</title>
-    <link rel="icon" type="image/webp" href="./division.webp">
+    <link rel="icon" type="image/webp" href="./61hFVdt7F0L.webp">
+    <title>Odd Or Even</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 style ="text-align:center">Choose your Program</h1><br><hr>
-    <a style="display: inline-block;
-  width: 300px;
-  height: 300px;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  line-height: 200px;
-  text-decoration: none;
-  border-radius: 15px;
-  box-shadow: 5px 5px 15px 5px #000000;
-  font-weight: bold;
-  font-size: 20px;
-  margin: 50px auto;
-  position: relative;
-  left: 15%;"
-    href="./OddOrEven/index.html">Odd or Even Program</a>
+    <h1>Odd or Even Calculator</h1>
+    <label for = "numberInput">Please enter an integer number: </label>
+    <input type ="number" id = "numberInput" step ="1"  value ="0" required>
+
+    <p><button type ="button" onclick = "checkOddOrEven()">Check</button></p>
+    <p>
+        <a href ="https://en.wikipedia.org/wiki/Parity_(mathematics)">Learn more about Odd and Even numbers
+            <img id ="img" src="./math.jpg" alt ="Math">
+        </a>
+    </p>
+    <p id ="result"></p>
+
+    <footer>
+        <hr>
+        <p>Author Name: Danilo Russo</p>
+        <a href = "mailto:danilorusso.info94@gmail.com">Contact me</a>
+    </footer>
+
+    <script>
+        const INPUT = document.getElementById("numberInput");
+        const RESULT = document.getElementById("result");
+        const IMG = document.getElementById("img");
+        
+
+        function checkOddOrEven() {
+            let number = Number(INPUT.value);
+            if (!Number.isInteger(number)) {
+                RESULT.innerHTML = "Please enter a valid integer.";
+                IMG.src = "./meme.jpg";
+            } else if (number % 2 == 0) {
+                RESULT.innerHTML = `The number ${number} is even.`;
+                IMG.src = "./odd.gif";
+            } else {
+                RESULT.innerHTML = `The number ${number} is odd.`;
+                IMG.src = "./even.gif";
+            }
+    }
+    
+    </script>
+    
 </body>
 </html>
