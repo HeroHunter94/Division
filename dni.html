@@ -1,0 +1,70 @@
+<!--Haz un programa en JavaScript que reciba un número de DNI que 
+deberá estar compuesto por 8 cifras y una letra. 
+(Recordar las funciones del programa palabra bonita)
+Al dividir el número entre 23, el residuo te dará un valor 
+entre los de esta tabla.El programa deberá indicar si la letra 
+del DNI introducido, es correcta o no y mostrar 
+la letra correcta.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/webp" href="pic.jpg">
+</head>
+<body>
+    <h1>DNI Checker</h1>
+    <label for = "input">Please insert your DNI: </label> 
+    <input type = "text" id ="input" value ="00000000F" required>
+    <br>
+
+    <p><button type = "button" onclick = "dniChecker()">Check</button></p>
+    <p>
+        <a href = "https://es.wikipedia.org/wiki/Documento_nacional_de_identidad_(Espa%C3%B1a)">Learn about the DNI
+            <img id = "img" src = "ID.jpg" alt ="Patrick ID">
+        </a>
+    </p>
+    <p id = "output"></p>
+
+    
+
+    <footer>
+        <hr>
+        <p>Author Name: Danilo Russo</p>
+        <a href = "mailto:danilorusso.info94@gmail.com">Contact me</a>
+    </footer>
+
+    <script>
+        arrayLetter = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', ' L', 'C', 'K', 'E'];
+        
+        const INPUT = document.getElementById("input");
+        function dniChecker() {
+            let dni = INPUT.value;
+            let rest;
+            console.log(dni.charAt(8));
+            if (dni.length < 9 || dni.length > 9) {
+                output.innerHTML = "Please enter 9 characters!";
+                return
+            } 
+            for (let i = 0; i < 8; i++) {
+                if (isNaN(dni[i])) {
+                    output.innerHTML = "Please enter only numbers for the first 8 characters";
+                    return
+                }
+            }
+            
+            rest = parseInt(dni) % 23;
+            if (arrayLetter[rest] == dni.charAt(8).toUpperCase()) {
+                output.innerHTML = `The last letter of your DNI ${arrayLetter[rest]} is correct`
+            } else {
+                output.innerHTML = `The last letter of your DNI ${dni.charAt(8)} is not correct, the correct one is ${arrayLetter[rest]} `;
+            }
+ 
+        }
+    </script>
+
+    
+</body>
+</html>
